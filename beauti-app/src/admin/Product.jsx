@@ -764,7 +764,7 @@ const Product = () => {
             setEditId(null);
             setFormData({ name: '', description: '', price: '', stock: '', images: [], category: '', brand: '' });
 
-            const res = await axios.get('http://localhost:4000/api/products/my-products', {
+            const res = await axios.get('https://selfy-snap.onrender.com/api/products/my-products', {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             });
             setProducts(res.data.products);
@@ -842,7 +842,7 @@ const Product = () => {
                             <div className="grid grid-cols-3 gap-2 mt-2">
                                 {formData.images.map((img, index) => (
                                     <div key={index} className="relative">
-                                        <img src={`http://localhost:4000${img}`} alt="preview" className="w-full h-20 object-cover rounded" />
+                                        <img src={`https://selfy-snap.onrender.com${img}`} alt="preview" className="w-full h-20 object-cover rounded" />
                                         <button type="button" onClick={() => setFormData((prev) => ({ ...prev, images: prev.images.filter((_, i) => i !== index) }))} className="absolute top-1 right-1 bg-red-500 text-white rounded-full px-2">✕</button>
                                     </div>
                                 ))}
