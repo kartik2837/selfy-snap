@@ -18,12 +18,24 @@ const uploadRoutes = require('./route/upload')
 const app = express();
 
 // ✅ Enable CORS for frontend origin
+const allowedOrigins = [
+  'http://localhost:5173',                 // local frontend
+  'https://selfy-snap-1.onrender.com'      // deployed frontend
+];
+
 app.use(cors({
-    origin: 'http://localhost:5173',
-    credentials: true,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('CORS not allowed for this origin: ' + origin));
+    }
+  },
+  credentials: true
 }));
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/upload', uploadRoutes);
 
@@ -38,7 +50,6 @@ app.use(
     })
 );
 
-app.use(express.urlencoded({ extended: true }));
 
 // ✅ Routes
 app.use('/api/auth', authRoutes);
