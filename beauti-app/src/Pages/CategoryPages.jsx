@@ -7,7 +7,7 @@
 //     const [products, setProducts] = useState([]);
 
 //     useEffect(() => {
-//         axios.get(`http://localhost:4000/api/products/category/${slug}`)
+//         axios.get(`https://selfy-snap.onrender.com/api/products/category/${slug}`)
 //             .then(res => setProducts(res.data.products))
 //             .catch(err => console.error("Error:", err));
 //     }, [slug]);
