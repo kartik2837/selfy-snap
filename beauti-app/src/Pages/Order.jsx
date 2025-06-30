@@ -17,7 +17,7 @@
 //     useEffect(() => {
 //         const fetchOrders = async () => {
 //             try {
-//                 const res = await axios.get('http://localhost:4000/api/orders/my', {
+//                 const res = await axios.get('https://selfy-snap.onrender.com/api/orders/my', {
 //                     headers: {
 //                         Authorization: `Bearer ${token}`,
 //                     },
@@ -906,7 +906,7 @@ const Order = () => {
     const handlePlaceOrder = async () => {
         try {
             await axios.post(
-                'http://localhost:4000/api/orders/place',
+                'https://selfy-snap.onrender.com/api/orders/place',
                 {},
                 { headers: { Authorization: `Bearer ${token}` } }
             );
