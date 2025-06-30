@@ -890,7 +890,7 @@ const Order = () => {
 
     const fetchOrders = async () => {
         try {
-            const res = await axios.get('http://localhost:4000/api/orders/my', {
+            const res = await axios.get('https://selfy-snap.onrender.com/api/orders/my', {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setOrders(res.data);
@@ -961,7 +961,7 @@ const Order = () => {
                                     item.product && (
                                         <div key={item._id} className="flex gap-3 border rounded-lg p-3 shadow-sm bg-gray-50 relative flex-col sm:flex-row">
                                             <img
-                                                src={`http://localhost:4000${item.product.images[0]}`}
+                                                src={`https://selfy-snap.onrender.com${item.product.images[0]}`}
                                                 alt={item.product.name}
                                                 className="w-full sm:w-20 h-20 object-contain border rounded"
                                             />
