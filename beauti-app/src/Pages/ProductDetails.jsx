@@ -622,9 +622,9 @@ const ProductDetails = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const res = await axios.get(`http://localhost:4000/api/products/${id}`);
+                const res = await axios.get(`https://selfy-snap.onrender.com/api/products/${id}`);
                 setProduct(res.data.product);
-                setSelectedImage(`http://localhost:4000${res.data.product.images?.[0]}`);
+                setSelectedImage(`https://selfy-snap.onrender.com${res.data.product.images?.[0]}`);
             } catch (err) {
                 console.error("Failed to fetch product:", err);
                 setError('Failed to load product.');
@@ -657,7 +657,7 @@ const ProductDetails = () => {
                         {product.images?.slice(0, 4).map((img, index) => (
                             <img
                                 key={index}
-                                src={`http://localhost:4000${img}`}
+                                src={`https://selfy-snap.onrender.com${img}`}
                                 alt={`Thumbnail ${index}`}
                                 onClick={() => setSelectedImage(`http://localhost:4000${img}`)}
                                 className={`h-20 w-full object-contain cursor-pointer border p-1 rounded-lg transition duration-200 ${selectedImage === `http://localhost:4000${img}`
