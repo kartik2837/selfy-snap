@@ -659,7 +659,7 @@ const ProductDetails = () => {
                                 key={index}
                                 src={`https://selfy-snap.onrender.com${img}`}
                                 alt={`Thumbnail ${index}`}
-                                onClick={() => setSelectedImage(`http://localhost:4000${img}`)}
+                                onClick={() => setSelectedImage(`https://selfy-snap.onrender.com${img}`)}
                                 className={`h-20 w-full object-contain cursor-pointer border p-1 rounded-lg transition duration-200 ${selectedImage === `http://localhost:4000${img}`
                                         ? 'border-blue-600 ring-2 ring-blue-300'
                                         : 'hover:border-blue-400'
