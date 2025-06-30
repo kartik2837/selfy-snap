@@ -268,7 +268,7 @@ const Product = () => {
                         {/* Product Image */}
                         <div className="overflow-hidden rounded-t-xl">
                             <Link to={`/product/${_id}`}><img
-                                src={`http://localhost:4000${images[0]}`}
+                                src={`https://selfy-snap.onrender.com${images[0]}`}
                                 alt={name}
                                 className="w-full h-40 object-contain bg-white p-2 transition-transform duration-300 hover:scale-105"
                             /></Link>
