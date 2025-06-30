@@ -24,7 +24,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:4000/api/auth/register", formData);
+            await axios.post("https://selfy-snap.onrender.com/api/auth/register", formData);
             toast.success("Registered successfully!");
             setTimeout(() => navigate("/login"), 2000); // ✅ Redirect after 2 sec
         } catch (error) {
