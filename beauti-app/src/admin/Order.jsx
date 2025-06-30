@@ -19,7 +19,7 @@ const Order = () => {
             }
 
             try {
-                const res = await axios.get(`http://localhost:4000/api/orders/seller`, {
+                const res = await axios.get(`https://selfy-snap.onrender.com/api/orders/seller`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
