@@ -565,7 +565,7 @@ const CartPage = () => {
                         product && (
                             <div key={product._id} className="flex gap-4 border rounded-lg p-3 shadow-sm bg-white">
                                 <img
-                                    src={`http://localhost:4000${product.images[0]}`}
+                                    src={`https://selfy-snap.onrender.com${product.images[0]}`}
                                     alt={product.name}
                                     className="w-20 h-20 object-contain border rounded"
                                 />
