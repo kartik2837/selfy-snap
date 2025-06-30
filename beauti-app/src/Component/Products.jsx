@@ -9,7 +9,7 @@ const Product = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await axios.get("http://localhost:4000/api/products/all-products");
+                const res = await axios.get("https://selfy-snap.onrender.com/api/products/all-products");
                 console.log("Fetched data:", res.data); // ✅ Check what is returned
                 console.log(res.data.products);
                 setProducts(res.data.products); // ✅ Use the correct array
