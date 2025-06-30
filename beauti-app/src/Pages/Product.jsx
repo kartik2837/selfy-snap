@@ -64,7 +64,7 @@ const Product = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await axios.get("http://localhost:4000/api/products/all-products");
+                const res = await axios.get("https://selfy-snap.onrender.com/api/products/all-products");
                 setProducts(res.data.products);
             } catch (error) {
                 console.error("Failed to fetch products:", error);
