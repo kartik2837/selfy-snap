@@ -719,7 +719,7 @@ const Product = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const res = await axios.get('http://localhost:4000/api/categories/all');
+                const res = await axios.get('https://selfy-snap.onrender.com/api/categories/all');
                 const data = Array.isArray(res.data) ? res.data : res.data.categories;
                 setCategories(data);
             } catch (err) {
@@ -729,7 +729,7 @@ const Product = () => {
 
         const fetchProducts = async () => {
             try {
-                const res = await axios.get('http://localhost:4000/api/products/my-products', {
+                const res = await axios.get('https://selfy-snap.onrender.com/api/products/my-products', {
                     headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
                 });
                 setProducts(res.data.products);
@@ -750,8 +750,8 @@ const Product = () => {
         e.preventDefault();
         try {
             const url = editId
-                ? `http://localhost:4000/api/products/update/${editId}`
-                : 'http://localhost:4000/api/products/create';
+                ? `https://selfy-snap.onrender.com/api/products/update/${editId}`
+                : 'https://selfy-snap.onrender.com/api/products/create';
 
             const method = editId ? 'put' : 'post';
 
@@ -790,11 +790,11 @@ const Product = () => {
     const handleDelete = async (id) => {
         if (!window.confirm('Are you sure to delete this product?')) return;
         try {
-            await axios.delete(`http://localhost:4000/api/products/delete/${id}`, {
+            await axios.delete(`https://selfy-snap.onrender.com/api/products/delete/${id}`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             });
             alert('Product deleted!');
-            const res = await axios.get('http://localhost:4000/api/products/my-products', {
+            const res = await axios.get('https://selfy-snap.onrender.com/api/products/my-products', {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             });
             setProducts(res.data.products);
@@ -830,7 +830,7 @@ const Product = () => {
                                 const formDataImg = new FormData();
                                 formDataImg.append('image', file);
                                 try {
-                                    const res = await axios.post('http://localhost:4000/api/upload', formDataImg, {
+                                    const res = await axios.post('https://selfy-snap.onrender.com/api/upload', formDataImg, {
                                         headers: { 'Content-Type': 'multipart/form-data' }
                                     });
                                     const imageUrl = res.data.imageUrl;
@@ -874,7 +874,7 @@ const Product = () => {
                         >
                             <div className="flex items-center gap-3">
                                 <img
-                                    src={`http://localhost:4000${product.images[0]}`}
+                                    src={`https://selfy-snap.onrender.com${product.images[0]}`}
                                     alt={product.name}
                                     className="w-12 h-12 object-cover rounded"
                                 />
