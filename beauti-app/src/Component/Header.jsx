@@ -460,7 +460,7 @@ const Header = () => {
             setUser(JSON.parse(storedUser));
         }
 
-        axios.get('http://localhost:4000/api/categories/all')
+        axios.get('https://selfy-snap.onrender.com/api/categories/all')
             .then(res => setCategories(res.data.categories || []))
             .catch(err => console.error("Failed to load categories", err));
     }, []);
