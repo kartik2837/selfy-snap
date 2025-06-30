@@ -93,7 +93,7 @@ const CategoryPage = () => {
     const { addToCart } = useCart();
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/api/products/category/${slug}`)
+        axios.get(`https://selfy-snap.onrender.com/api/products/category/${slug}`)
             .then(res => setProducts(res.data.products))
             .catch(err => console.error("Error:", err));
     }, [slug]);
@@ -116,7 +116,7 @@ const CategoryPage = () => {
                         className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transform hover:scale-[1.01] transition-all duration-300"
                     >
                         <Link to={`/product/${product._id}`}> <img
-                            src={`http://localhost:4000${product.images[0]}`}
+                            src={`https://selfy-snap.onrender.com${product.images[0]}`}
                             alt={product.name}
                             className="h-32 w-full object-cover"
                         /></Link>
