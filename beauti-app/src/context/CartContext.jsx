@@ -500,7 +500,7 @@ export const CartProvider = ({ children }) => {
     useEffect(() => {
         const fetchCart = async () => {
             try {
-                const res = await axios.get('http://localhost:4000/api/cart', {
+                const res = await axios.get('https://selfy-snap.onrender.com/api/cart', {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 const validItems = Array.isArray(res.data?.items)
@@ -520,7 +520,7 @@ export const CartProvider = ({ children }) => {
     const addToCart = async (product) => {
         try {
             const res = await axios.post(
-                'http://localhost:4000/api/cart/add',
+                'https://selfy-snap.onrender.com/api/cart/add',
                 { productId: product._id, quantity: 1 },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -537,7 +537,7 @@ export const CartProvider = ({ children }) => {
     const updateQuantity = async (productId, quantity) => {
         try {
             const res = await axios.put(
-                'http://localhost:4000/api/cart/update',
+                'https://selfy-snap.onrender.com/api/cart/update',
                 { productId, quantity },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -554,7 +554,7 @@ export const CartProvider = ({ children }) => {
     const removeFromCart = async (productId) => {
         try {
             const res = await axios.delete(
-                `http://localhost:4000/api/cart/remove/${productId}`,
+                `https://selfy-snap.onrender.com/api/cart/remove/${productId}`,
                 { headers: { Authorization: `Bearer ${token}` } }
             );
             const validItems = Array.isArray(res.data?.items)
