@@ -90,7 +90,7 @@ const Product = () => {
                     >
                         <div className="relative overflow-hidden">
                             <Link to={`/product/${_id}`}> <img
-                                src={`http://localhost:4000${images[0]}`}
+                                src={`https://selfy-snap.onrender.com${images[0]}`}
                                 alt={name}
                                 className="w-full h-40 object-cover transform group-hover:scale-105 transition-transform duration-300"
                             />
