@@ -514,7 +514,7 @@ const Header = () => {
                         </li>
                         <li><Link to="/product" className="hover:text-gray-300">Products</Link></li>
                         <li><Link to="/blog" className="hover:text-gray-300">Blog</Link></li>
-                        <li><Link to="/contact" className="hover:text-gray-300">Contact Us</Link></li>
+                        <li><Link to="/contact" className="hover:text-gray-300">Contact</Link></li>
 
                         {/* User & Cart */}
                         <li className="relative flex gap-4 items-center mt-2 md:mt-0">
